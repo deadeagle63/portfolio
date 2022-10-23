@@ -21,7 +21,7 @@ function ContactForm() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => { 
     e.preventDefault()
     if(formRef.current==null)return
-    emailjs.sendForm('service_51zzb79', 'template_bl6m5h8', formRef.current, 'rj9aOh1b4BPtrpGn_')
+    emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE, import.meta.env.VITE_EMAILJS_TEMPLATE, formRef.current, import.meta.env.VITE_EMAILJS_PUBLICKEY)
       .then((result) => {
         toast.success('Email sent successfully', { id: 'contact-form' })
         localStorage.setItem("email",Date.now().toString())

@@ -28,7 +28,7 @@ function Contact() {
         <m.p className='text-white text-2xl font-light whitespace-normal break-words w-full text-center' initial={animateIn.initial} whileInView={{ ...animateIn.whileInView, transition: { delay: 0.66 } }} viewport={{ once: true, amount: 0.25 }}>Whether you want to hire me, ask for advice, or simply connect 🤓</m.p>
       </m.div>
 
-      <m.div className='flex w-full md:justify-center md:items-center' initial={{ ...animateIn.initial, scale: 2, x: 0, y: 150 }} whileInView={{ ...animateIn.whileInView, y: 0, transition: { delay: 1 } }} viewport={{ once: true, amount: 0.5 }}>
+      <m.div className='flex w-full md:justify-center md:items-center' initial={{ ...animateIn.initial, scale: 2, x: 0, y: 150 }} whileInView={{ ...animateIn.whileInView, y: 0, transition: { delay: 1 } }} viewport={{ once: true, amount: 0.25 }}>
         <ContactForm />
       </m.div>
 
