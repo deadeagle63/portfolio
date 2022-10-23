@@ -31,7 +31,7 @@ function BurgerBar() {
   const handleToggle = () => toggleOpen()
   useClickOutside(burgerRef, () => toggleOpen(0))
   return (
-    <m.nav  className='fixed bottom-8 sm:bottom-0 right-[85%] sm:right-4 sm:top-0 w-max z-10' initial={false} animate={isOpen?'open':'closed'} custom={height} ref={burgerRef}>
+    <m.nav  className='fixed right-2 top-2 sm:top-0 sm:right-4 w-max z-10' initial={false} animate={isOpen?'open':'closed'} custom={height} ref={burgerRef}>
       <m.div className='w-16 h-16' variants={menu} />
       <Navigation toggle={ handleToggle}  />
       <MenuToggle toggle={handleToggle} />

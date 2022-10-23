@@ -27,7 +27,7 @@ export const Navigation = ({ toggle }: { toggle: Function }) => {
     toggle()
   }
   
-  return <motion.ul  variants={variants} className=' absolute bottom-full left-full sm:-left-28 sm:top-20  bg-white py-4 px-4 w-44  flex justify-around items-center flex-col rounded-lg gap-2'>
+  return <motion.ul  variants={variants} className=' absolute top-20 right-2 bg-white py-4 px-4 w-44  flex justify-around items-center flex-col rounded-lg gap-2'>
     {itemIds.map((item:{id:number,text:string}) => (
       <MenuItem i={item.id} key={item.id} text={item.text} navigateTo={scrollTo}  />
     ))}

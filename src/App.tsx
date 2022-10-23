@@ -29,7 +29,7 @@ function App() {
       case latest >= 0.65 && latest <= 0.9:
         setScrollTo('contact')
         break;
-      case latest > 0.95:
+      case latest > 0.9:
       case latest == 0:
         setScrollTo('about')
         break
@@ -54,7 +54,7 @@ function App() {
         right: 0,
         bottom: 0
       }
-    }, "text-white text-9xl font-bold text-center flex items-center justify-center flex-wrap cursor-pointer",""),
+    }, "text-white text-8xl md:text-9xl font-bold text-center flex items-center justify-center flex-wrap cursor-pointer",""),
       <TypingAnimation string='Its about to get real' className='text-white text-3xl font-semibold tracking-wide' />]
   }, [])
   const navigateTo = () => {
@@ -70,7 +70,7 @@ function App() {
       <m.div id='home' className='flex bg-gradient-to-l to-purple-900 from-stone-900  items-center justify-center h-full min-h-screen  min-w-full w-full flex-col gap-2 snap-center relative shrink-0' >
         {animatedHelloWorld}
         {typingDescription}
-        <m.div className={`animate-pulse fixed  bottom-8 right-${showChevron?0:4} sm:bottom-1/2 sm:right-4 cursor-pointer z-50`} whileHover={{scale:1.05}} whileTap={{scale:0.9}} onClick={navigateTo} >
+        <m.div className={`animate-pulse fixed bottom-8 sm:bottom-1/2 right-4 sm:right-0 cursor-pointer z-50`} whileHover={{scale:1.05}} whileTap={{scale:0.9}} onClick={navigateTo} >
           <Icon size={showChevron?64:48} color='white' />
         </m.div>
         <BurgerBar/>

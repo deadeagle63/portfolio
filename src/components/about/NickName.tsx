@@ -28,7 +28,7 @@ const nickNameAnimations = {
 }
 const NickName = ({ name }: { name: string }) => {
   // @ts-ignore: Props cant animate position, but this is used to smooth it out
-  return <m.span className='text-white text-4xl font-bold' initial='hidden' animate='visible' exit='exit' variants={nickNameAnimations} >
+  return <m.span className='text-white text-xl md:text-4xl font-bold' initial='hidden' animate='visible' exit='exit' variants={nickNameAnimations} >
     {name}
   </m.span>
 }
