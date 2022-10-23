@@ -94,11 +94,11 @@ function Resume() {
           <m.div className='flex flex-row flex-wrap items-center justify-center gap-4' initial='hidden' whileInView='whileInView' variants={skillAnimate} viewport={{ once: true, amount: 0.43 }}>
             <SkillItem skill='ReactJS' level={5} />
             <SkillItem skill='TypeScript' level={5} />
-            <SkillItem skill='AWS' level={5} />
-            <SkillItem skill='Styled-Components' level={4} />
+            <SkillItem skill='Rest-API' level={5} />
             <SkillItem skill='Framer-Motion' level={4} />
-            <SkillItem skill='AngularJS' level={3} />
-            <SkillItem skill='Go' level={2} />
+            <SkillItem skill='AWS' level={4} />
+            <SkillItem skill='Python' level={3} />
+            <SkillItem skill='GoLang' level={2} />
            
           </m.div>
           <m.p className='text-white text-center self-center '>And many more...</m.p>
