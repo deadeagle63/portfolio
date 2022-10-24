@@ -32,8 +32,8 @@ function BurgerBar() {
   useClickOutside(burgerRef, () => toggleOpen(0))
   return (
     <m.nav  className='fixed right-2 top-2 sm:top-0 sm:right-4 w-max z-10' initial={false} animate={isOpen?'open':'closed'} custom={height} ref={burgerRef}>
-      <m.div className='w-16 h-16' variants={menu} />
-      <Navigation toggle={ handleToggle}  />
+      <m.div className='w-12 h-12' variants={menu} />
+      <Navigation toggle={ handleToggle} isOpen={isOpen}  />
       <MenuToggle toggle={handleToggle} />
     </m.nav>
   )

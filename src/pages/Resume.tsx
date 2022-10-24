@@ -51,7 +51,7 @@ function Resume() {
   const inViewRef = useRef(null)
   
   return (
-    <m.div id='resume' className='min-w-full w-screen h-full min-h-screen overflow-scroll bg-gradient-to-r to-slate-700 from-stone-800 snap-center shrink-0 flex flex-col gap-4 px-8 lg:px-48 no-scrollbar py-8' ref={inViewRef} >
+    <m.div id='resume' className='min-w-full w-screen h-full min-h-screen overflow-y-scroll overflow-x-hidden bg-gradient-to-r to-slate-700 from-stone-800 snap-center shrink-0 flex flex-col gap-4 px-8 lg:px-48 no-scrollbar py-8 pb-12' ref={inViewRef} >
       <m.div className='flex w-full items-center justify-center flex-col'>
         <m.h2 className='text-7xl text-white font-bold' initial={animateIn.initial} whileInView={{ ...animateIn.whileInView, transition: { delay: 0.33 } }} viewport={{ once: true, amount: 0.33 }} >Resume</m.h2>
         <m.p className='text-white font-light text-2xl whitespace-normal break-words text-center' initial={animateIn.initial} whileInView={{ ...animateIn.whileInView, transition: { delay: 0.77 } }} viewport={{ once: true, amount: 0.33 }} >All the experience and important bits ✨</m.p>
@@ -65,7 +65,7 @@ function Resume() {
         </m.span>
       
 
-        <m.div className='flex items-center justify-center md:justify-evenly flex-col md:flex-row md:flex-wrap gap-4' initial='hidden' whileInView='whileInView' variants={experienceAnimate} viewport={{ once: true, amount: 0.33 }}>
+        <m.div className='flex items-center justify-center md:justify-evenly flex-col md:flex-row md:flex-wrap gap-4' initial='hidden' whileInView='whileInView' variants={experienceAnimate} viewport={{ once: true, amount: 0.25 }}>
           <ExperienceItem company='LadderCaster' title='Senior Frontend Engineer' date='04-2022 - 10-2022' description='Created the worlds first fully on-chain P2E title on Solana netting $35k transactions per day at our peak period' skills={['ReactJS','Styled-Components','AnchorJS','Framer-Motion','TypeScript']} />
           <ExperienceItem company='AixVox' title='Lead Frontend Engineer' date='08-2022 - Present' description='Recreating a super secret product from scratch.. release soonTM' skills={['ReactJS', 'MUI', 'Axios', 'Framer-Motion','Rust']} />
           <ExperienceItem company='VodaFone' title='Apprentice Software Engineer' date='09-2019 - Present' description='Created and launched various B2B applications ranging from SaaS to PaaS, with the most notable being a redesign of our IVR product' skills={['ReactJS', 'TailWindCSS', 'Angular2', 'ReactFlow','Axios','AWS DynamoDB','AWS Cognito','AWS Lambda','TypeScript']} />
@@ -78,7 +78,7 @@ function Resume() {
             </m.h2>
             <m.p className='text-white text-xl font-light  md:indent-2' initial={animateIn.initial} whileInView={{ ...animateIn.whileInView, transition: { delay: 0.4 } }} viewport={{ once: true, amount: 0.45 }}>Qualifications, courses and history</m.p>
           </m.span>
-          <m.div className='flex flex-row flex-wrap justify-around gap-4' initial='hidden' whileInView='whileInView' variants={educationAnimate} viewport={{ once: true, amount: 0.4 }}>
+          <m.div className='flex flex-row flex-wrap justify-start gap-4' initial='hidden' whileInView='whileInView' variants={educationAnimate} viewport={{ once: true, amount: 0.4 }}>
             <EducationItem qualification='BSc Computer Science' institute='University of Warwick' completionDate='2024' description='Working towards a CS bachelors degree in spare time' />
             <EducationItem qualification='A-Levels' institute='Queen Marys College' completionDate='2019' qualifications={['ComputerScience (C)','Electronics (B)', 'IT (D*)']} />
           </m.div>
@@ -95,13 +95,13 @@ function Resume() {
             <SkillItem skill='ReactJS' level={5} />
             <SkillItem skill='TypeScript' level={5} />
             <SkillItem skill='Rest-API' level={5} />
-            <SkillItem skill='Framer-Motion' level={4} />
             <SkillItem skill='AWS' level={4} />
+            <SkillItem skill='Framer-Motion' level={4} />
             <SkillItem skill='Python' level={3} />
             <SkillItem skill='GoLang' level={2} />
            
           </m.div>
-          <m.p className='text-white text-center self-center '>And many more...</m.p>
+          <m.p className='text-white text-xl text-center self-center mb-12 md:mb-0'>And many more...</m.p>
         </m.div>
       </m.div>
    </m.div>

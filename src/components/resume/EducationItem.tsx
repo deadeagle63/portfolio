@@ -10,15 +10,15 @@ const animate = {
   }
 }
 const EducationItem = ({ qualification, institute, completionDate, description, qualifications }: { qualification: string, institute: string, completionDate: string, description?: string, qualifications?: string[] }) => {
-  return <m.div className='flex flex-col gap-4 max-w-[400px]  flex-grow bg-zinc-700 px-6 py-4  border-2 border-slate-400 rounded-2xl hover:border-slate-300' variants={animate}>
+  return <m.div className='flex flex-col gap-4 max-w-[400px]  flex-grow bg-zinc-700 px-6 py-4  border-2 border-slate-400 rounded-2xl hover:border-slate-300 flex-shrink md:flex-grow-0' variants={animate}>
     <m.div className='flex flex-col gap-2'>
       <m.span className='flex flex-row justify-between'>
-        <m.h3 className='text-white text-2xl font-bold'>
+        <m.h3 className='text-white text-2xl font-bold whitespace-normal break-words'>
           {qualification}
         </m.h3>
-        <m.span className='rounded-lg p-1 px-3 bg-stone-800 text-slate-50 font-bold w-max hover:bg-stone-600 transition-color ease-linear duration-75'>{completionDate}</m.span>
+        <m.span className=' flex items-center h-max rounded-lg p-1 px-3 bg-stone-800 text-slate-50 font-bold w-max hover:bg-stone-600 transition-color ease-linear duration-75'>{completionDate}</m.span>
       </m.span>
-      <m.p className='text-white text-xl font-light'>
+      <m.p className='text-white text-xl font-light whitespace-normal break-words'>
         {institute}
       </m.p>
       <m.p className='tracking-wide break-words whitespace-normal text-lg text-white font-normal'>

@@ -35,7 +35,7 @@ function ContactForm() {
         <m.p className='text-white font-bold text-4xl'>
           Contact Form
         </m.p>
-        <m.p className='text-white font-light text-lg indent-2'>
+        <m.p className='text-white font-light text-lg md:indent-2 whitespace-normal break-words'>
           Incase you dont want direct contact 
         </m.p>
       </m.div>

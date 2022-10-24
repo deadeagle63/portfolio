@@ -12,7 +12,7 @@ const animate = {
   }
 }
 const ExperienceItem = ({ company, title, date, description, skills }: { company: string, title: string, date: string, description: string, skills: string[] }) => {
-  return <m.div className='flex flex-col gap-4 max-w-[400px] min-h-[500px] flex-grow bg-slate-700 p-8 border-2 border-zinc-400 rounded-xl flex-shrink hover:border-zinc-100' variants={animate}>
+  return <m.div className='flex flex-col gap-4 max-w-[400px] min-w-[350px] min-h-[500px] flex-grow bg-slate-700 p-8 border-2 border-zinc-400 rounded-xl flex-shrink hover:border-zinc-100' variants={animate}>
     <m.div className='flex flex-col gap-1'>
       <m.h3 className='text-white text-3xl font-bold'>
         {company}

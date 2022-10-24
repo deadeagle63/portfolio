@@ -12,7 +12,7 @@ const Path = (props:any) => (
 );
 
 export const MenuToggle = ({ toggle }: { toggle: React.MouseEventHandler }) => (
-  <button onClick={toggle} className='w-16 h-16 bg-transparent rounded-3xl cursor-pointer outline-none border-none absolute bottom-0 sm:top-4 left-0 sm:right-4 flex items-center justify-center'>
+  <button onClick={toggle} className=' bg-transparent rounded-3xl cursor-pointer outline-none border-none absolute top-2 right-2 sm:top-4 sm:right-4 flex items-center justify-center'>
     <svg width="36" height="36" viewBox="0 0 23 23">
       <Path
         variants={{
