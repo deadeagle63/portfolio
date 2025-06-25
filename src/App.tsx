@@ -1,7 +1,7 @@
 import { lazy, useMemo,useEffect,useRef ,useState} from 'react'
 import { textIntroAnimation, TypingAnimation } from '@functions/createAnimation'
 import {  motion as m, useScroll } from 'framer-motion'
-import { ChevronRight, RefreshCw } from 'react-feather'
+import {ChevronLeft, ChevronRight, RefreshCw} from 'react-feather'
 import {Toaster} from 'react-hot-toast'
 import BurgerBar from '@components/BurgerBar/BurgerBar'
 import About from '@pages/About'
@@ -21,7 +21,6 @@ function App() {
     })
   }, [])
   function calculateScrollBehavior(latest: any) {
-   
     switch (true) {
       case latest >= 0.32 && latest <= 0.66:
         setScrollTo('resume')
@@ -42,6 +41,17 @@ function App() {
       setShowChevron(true)
     }
   }
+  const scrollPrev = useMemo(()=>{
+    if (scrollTo == 'resume') {
+      return 'home'
+    } else if (scrollTo == 'contact') {
+      return 'about'
+    }
+    else if (scrollTo == 'about' && scrollXProgress.get() > 0.9) {
+      return 'resume'
+    }
+    return ''
+  },[scrollTo, scrollXProgress])
   const Icon = useMemo(() => {
     return showChevron ?ChevronRight:RefreshCw
   }, [showChevron])
@@ -63,15 +73,25 @@ function App() {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
- 
+  const navigatePrev = () => {
+    const element = document.getElementById(scrollPrev);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   return (
     <div id='landing' ref={scrollRef} className="snap-x snap-mandatory w-full min-w-screen  h-full  flex flex-row overflow-scroll no-scrollbar">
       <Toaster />
-      <m.div id='home' className='flex bg-gradient-to-l to-purple-900 from-stone-900  items-center justify-center h-full min-h-screen  min-w-full w-full flex-col gap-2 snap-center relative shrink-0' >
+      <m.div id='home' className='flex bg-purple-900 items-center justify-center h-full min-h-screen  min-w-full w-full flex-col gap-2 snap-center relative shrink-0' >
         {animatedHelloWorld}
         {typingDescription}
-        <m.div className={`animate-pulse fixed bottom-8 sm:bottom-1/2 right-4 sm:right-0 cursor-pointer z-50`} whileHover={{scale:1.05}} whileTap={{scale:0.9}} onClick={navigateTo} >
-          <Icon size={showChevron?64:48} color='white' />
+        {!!scrollPrev &&<m.div className={`animate-pulse fixed bottom-8 left-0 sm:bottom-1/2 cursor-pointer z-50`}
+                whileHover={{scale: 1.05}} whileTap={{scale: 0.9}} onClick={navigatePrev}>
+          <ChevronLeft size={48} className={`ml-4`} color='white'/>
+        </m.div>}
+        <m.div className={`animate-pulse fixed bottom-8 right-0 sm:bottom-1/2 cursor-pointer z-50`} whileHover={{scale:1.05}} whileTap={{scale:0.9}} onClick={navigateTo} >
+          <Icon size={showChevron?48:36} className={`mr-4`} color='white'/>
         </m.div>
         <BurgerBar/>
       </m.div>

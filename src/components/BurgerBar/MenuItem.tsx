@@ -22,14 +22,13 @@ const variants = {
 
 
 export const MenuItem = ({ i,text,navigateTo }:{i:number,text:string,navigateTo:Function}) => {
-
   return (
     <motion.li
       variants={variants}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={() => navigateTo(text)}
-      className='cursor-pointer text-slate-900 text-2xl font-bold w-full px-2 py-1 border-2 border-black rounded-md'
+      className={`cursor-pointer text-slate-900 text-2xl font-bold w-full px-2 py-1 border-2 border-black rounded-md hover:bg-purple-500 hover:border-purple-900 hover:text-white `}
     >
       {text}
     </motion.li>

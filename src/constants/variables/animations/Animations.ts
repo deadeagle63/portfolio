@@ -15,7 +15,7 @@ const character={
     },
     typing: {
       variants: {
-        hidden: { opacity: 0,y:-100 },
+        hidden: { opacity: 0, y:-100 },
         visible: {
           opacity: 1,
           y: 0,
@@ -23,9 +23,9 @@ const character={
         animate: {
           opacity: [0, 1],
           transition: {
-            duration: 1.5,
+            duration: 1,
             repeat: Infinity,
-            repeatDelay: 3,
+            repeatDelay: 2,
             ease: 'circInOut'
           }
 

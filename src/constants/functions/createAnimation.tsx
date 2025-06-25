@@ -49,9 +49,13 @@ function textIntroAnimation(string: string, animation: Animation, parentClassNam
 function TypingAnimation({string,className} : {string: string, className: string})  { 
   const [animationState, setAnimationState] = useState('visible')
   useEffect(() => {
-    setTimeout(() => {
+    const t = setTimeout(() => {
       setAnimationState('animate')
     },3000)
+
+    return () => {
+      clearTimeout(t)
+    }
   },[])
   
   return <motion.p {...StaticAnimations.line.typing} className={className} initial='hidden' animate={animationState}>
